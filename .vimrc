@@ -12,6 +12,7 @@ set ttimeoutlen=50
 
 set encoding=utf-8
 setglobal fileencoding=utf-8
+" testing out figitive.vim
 " global bomb
 set fileencoding=ucs-bom,utf-8,latin1
 set listchars=tab:▸\ ,eol:¬
