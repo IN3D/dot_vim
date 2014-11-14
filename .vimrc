@@ -1,21 +1,26 @@
-vim -u  /Users/eric/.vimrc
+" for pathgen
 execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
-set guifont=Monaco:h11
+
+" basic settings
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
 set number
-set list
-set ts=2 sts=2 sw=2 expandtab
+set ts=4 sts=4 sw=4 et
+
+" these are for airline
 set laststatus=2
 set ttimeoutlen=50
 
-set encoding=utf-8
-setglobal fileencoding=utf-8
-" testing out figitive.vim
-" global bomb
-set fileencoding=ucs-bom,utf-8,latin1
-set listchars=tab:▸\ ,eol:¬
+" this sets airline to have fancy icons
+let g:airline_powerline_fonts=1
 
-colo gruvbox
-set background=dark
+" OS specific settings
+let os = substitute(system('uname'),"\n","","")
+if os == "Darwin"
+    set transparency=5
+    colo gruvbox
+    set background=dark
+    set listchars=tab:▸\ ,eol:¬
+    set list
+endif
