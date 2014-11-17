@@ -23,4 +23,6 @@ if os == "Darwin"
     set background=dark
     set listchars=tab:▸\ ,eol:¬
     set list
+elseif os == "FreeBSD"
+    set guifont=DejaVu\ Sans\ Mono:h11
 endif
