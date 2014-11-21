@@ -17,6 +17,7 @@ let g:airline_powerline_fonts=1
 
 " OS specific settings
 let os = substitute(system('uname'),"\n","","")
+
 if os == "Darwin"
     set transparency=5
     colo gruvbox
