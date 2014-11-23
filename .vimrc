@@ -19,7 +19,6 @@ let g:airline_powerline_fonts=1
 let os = substitute(system('uname'),"\n","","")
 
 if os == "Darwin"
-    set transparency=5
     colo gruvbox
     set background=dark
     set listchars=tab:▸\ ,eol:¬
