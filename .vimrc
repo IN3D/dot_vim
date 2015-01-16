@@ -7,7 +7,8 @@ filetype plugin indent on
 let os = substitute(system('uname'),"\n","","")
 
 " basic settings
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+set guifont=Monospace:h12
+
 set number
 
 set ts=4 sts=4 sw=4 et
@@ -16,11 +17,14 @@ set ts=4 sts=4 sw=4 et
 set laststatus=2
 set ttimeoutlen=50
 
-" this sets airline to have fancy icons
-let g:airline_powerline_fonts=1
-
+" remove annoying separators from airline
+let g:airline_right_sep = ""
+let g:airline_right_alt_sep = ""
+let g:airline_left_sep = ""
+let g:airline_left_alt_sep = ""
 
 if os == "Darwin"
+    set guifont=Monaco:h12
     set background=dark
     colo gruvbox
     set listchars=tab:▸\ ,eol:¬
