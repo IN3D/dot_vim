@@ -32,14 +32,11 @@ if os == "Darwin"
 
 elseif os == "FreeBSD"
     set guifont=DejaVu\ Sans\ Mono:h11
-    let g:airline_powerline_fonts=0
 
 elseif os == "Linux"
     set guifont=DejaVu\ Sans\ Mono:h11
-    let g:airline_powerline_fonts=0
 
 elseif has ("win32") || has("win16")
     set guifont=Consolas:h11:cANSI
-    let g:airline_powerline_fonts=0
 
 endif
