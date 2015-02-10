@@ -1,6 +1,7 @@
 bundles = [
     'https://github.com/chochos/ceylon-vim.git',
     'https://github.com/kien/ctrlp.vim.git',
+    'https://github.com/tpope/vim-endwise.git',
     'https://github.com/mattn/gist-vim.git',
     'https://github.com/tmhedberg/matchit.git',
     'https://github.com/scrooloose/nerdtree.git',
@@ -9,7 +10,9 @@ bundles = [
     'https://github.com/ervandew/supertab.git',
     'https://github.com/scrooloose/syntastic.git',
     'https://github.com/godlygeek/tabular.git',
+    'https://github.com/majutsushi/tagbar.git',
     'https://github.com/leafgarland/typescript-vim.git',
+    'https://github.com/SirVer/ultisnips.git',
     'https://github.com/tpope/vim-abolish.git',
     'https://github.com/bling/vim-airline.git',
     'https://github.com/xsbeats/vim-blade.git',
