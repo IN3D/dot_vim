@@ -1,0 +1,43 @@
+bundles = [
+    'https://github.com/chochos/ceylon-vim.git',
+    'https://github.com/kien/ctrlp.vim.git',
+    'https://github.com/mattn/gist-vim.git',
+    'https://github.com/tmhedberg/matchit.git',
+    'https://github.com/scrooloose/nerdtree.git',
+    'https://github.com/evanmiller/nginx-vim-syntax.git',
+    'https://github.com/cakebaker/scss-syntax.vim.git',
+    'https://github.com/ervandew/supertab.git',
+    'https://github.com/scrooloose/syntastic.git',
+    'https://github.com/godlygeek/tabular.git',
+    'https://github.com/leafgarland/typescript-vim.git',
+    'https://github.com/tpope/vim-abolish.git',
+    'https://github.com/bling/vim-airline.git',
+    'https://github.com/xsbeats/vim-blade.git',
+    'https://github.com/tpope/vim-bundler.git',
+    'https://github.com/kchmck/vim-coffee-script.git',
+    'https://github.com/tpope/vim-commentary.git',
+    'https://github.com/skammer/vim-css-color.git',
+    'https://github.com/tpope/vim-cucumber.git',
+    'https://github.com/tpope/vim-eunuch.git',
+    'https://github.com/valeriangalliat/vim-dogescript.git',
+    'https://github.com/nvie/vim-flake8.git',
+    'https://github.com/tpope/vim-fugitive.git',
+    'https://github.com/airblade/vim-gitgutter.git',
+    'https://github.com/fatih/vim-go.git',
+    'https://github.com/tpope/vim-haml.git',
+    'https://github.com/nathanaelkane/vim-indent-guides.git',
+    'https://github.com/digitaltoad/vim-jade.git',
+    'https://github.com/pangloss/vim-javascript.git',
+    'https://github.com/elzr/vim-json.git',
+    'https://github.com/groenewege/vim-less.git',
+    'https://github.com/plasticboy/vim-markdown.git',
+    'https://github.com/tpope/vim-rails.git',
+    'https://github.com/tpope/vim-repeat.git',
+    'https://github.com/tpope/vim-speeddating.git',
+    'https://github.com/tpope/vim-surround.git',
+    'https://github.com/mattn/webapi-vim.git'
+]
+
+bundles.each do |b|
+    `git clone #{b}`
+end
