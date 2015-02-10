@@ -1,7 +1,11 @@
 " Vim syntax file
 " Language:	JSON
 " Maintainer:	Eli Parra <eli@elzr.com> https://github.com/elzr/vim-json
-" Last Change:	2014-08-24 HiLink to hi def link
+" Last Change:	2014-12-20 Load ftplugin/json.vim
+
+" Reload the definition of g:vim_json_syntax_conceal
+" see https://github.com/elzr/vim-json/issues/42
+runtime! ftplugin/json.vim
 
 if !exists("main_syntax")
   if version < 600
@@ -19,7 +23,7 @@ syntax match   jsonNoise           /\%(:\|,\)/
 " Syntax: Strings
 " Separated into a match and region because a region by itself is always greedy
 syn match  jsonStringMatch /"\([^"]\|\\\"\)\+"\ze[[:blank:]\r\n]*[,}\]]/ contains=jsonString
-if has('conceal')
+if has('conceal') && g:vim_json_syntax_conceal == 1
 	syn region  jsonString oneline matchgroup=jsonQuote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape contained
 else
 	syn region  jsonString oneline matchgroup=jsonQuote start=/"/  skip=/\\\\\|\\"/  end=/"/ contains=jsonEscape contained
@@ -31,10 +35,10 @@ syn region  jsonStringSQError oneline  start=+'+  skip=+\\\\\|\\"+  end=+'+
 " Syntax: JSON Keywords
 " Separated into a match and region because a region by itself is always greedy
 syn match  jsonKeywordMatch /"\([^"]\|\\\"\)\+"[[:blank:]\r\n]*\:/ contains=jsonKeyword
-if has('conceal')
-   syn region  jsonKeyword matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ concealends contained
+if has('conceal') && g:vim_json_syntax_conceal == 1
+   syn region  jsonKeyword matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ concealends contains=jsonEscape contained
 else
-   syn region  jsonKeyword matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ contained
+   syn region  jsonKeyword matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ contains=jsonEscape contained
 endif
 
 " Syntax: Escape sequences

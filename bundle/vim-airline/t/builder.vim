@@ -20,11 +20,20 @@ describe 'active builder'
 
   it 'should reuse highlight group if background colors match'
     highlight Foo1 ctermfg=1 ctermbg=2
-    highlight Foo2 ctermfg=3 ctermbg=2
+    highlight Foo2 ctermfg=1 ctermbg=2
     call s:builder.add_section('Foo1', 'hello')
     call s:builder.add_section('Foo2', 'world')
     let stl = s:builder.build()
     Expect stl =~ '%#Foo1#hello>world'
+  end
+
+  it 'should switch highlight groups if foreground colors differ'
+    highlight Foo1 ctermfg=1 ctermbg=2
+    highlight Foo2 ctermfg=2 ctermbg=2
+    call s:builder.add_section('Foo1', 'hello')
+    call s:builder.add_section('Foo2', 'world')
+    let stl = s:builder.build()
+    Expect stl =~ '%#Foo1#hello%#Foo1_to_Foo2#>%#Foo2#world'
   end
 
   it 'should split left/right sections'
@@ -65,6 +74,14 @@ describe 'active builder'
     let stl = s:builder.build()
     Expect stl !~ '%#__restore__#'
     Expect stl =~ '%#Normal#'
+  end
+
+  it 'should blend colors from the left through the split to the right'
+    call s:builder.add_section('Normal', 'hello')
+    call s:builder.split()
+    call s:builder.add_section('Search', 'world')
+    let stl = s:builder.build()
+    Expect stl =~ 'Normal_to_Search'
   end
 end
 

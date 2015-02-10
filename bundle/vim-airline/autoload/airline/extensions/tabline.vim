@@ -1,10 +1,13 @@
 " MIT License. Copyright (c) 2013-2014 Bailey Ling.
 " vim: et ts=2 sts=2 sw=2
 
+scriptencoding utf-8
+
 let s:formatter = get(g:, 'airline#extensions#tabline#formatter', 'default')
 let s:excludes = get(g:, 'airline#extensions#tabline#excludes', [])
 let s:tab_nr_type = get(g:, 'airline#extensions#tabline#tab_nr_type', 0)
 let s:show_buffers = get(g:, 'airline#extensions#tabline#show_buffers', 1)
+let s:show_tabs = get(g:, 'airline#extensions#tabline#show_tabs', 1)
 let s:show_tab_nr = get(g:, 'airline#extensions#tabline#show_tab_nr', 1)
 let s:show_tab_type = get(g:, 'airline#extensions#tabline#show_tab_type', 1)
 let s:show_close_button = get(g:, 'airline#extensions#tabline#show_close_button', 1)
@@ -62,9 +65,10 @@ function! s:toggle_on()
     augroup airline_tabline
       autocmd!
       if s:show_buffers == 1
-        autocmd CursorMoved * call <sid>on_cursormove(s:buf_min_count, len(s:get_buffer_list()))
+        autocmd BufEnter * call <sid>show_tabline(s:buf_min_count, len(s:get_buffer_list()))
+        autocmd BufUnload * call <sid>show_tabline(s:buf_min_count, len(s:get_buffer_list()) - 1)
       else
-        autocmd TabEnter * call <sid>on_cursormove(s:tab_min_count, tabpagenr('$'))
+        autocmd TabEnter * call <sid>show_tabline(s:tab_min_count, tabpagenr('$'))
       endif
     augroup END
   endif
@@ -94,7 +98,7 @@ function! airline#extensions#tabline#load_theme(palette)
   call airline#highlighter#exec('airline_tabhid', l:tabhid)
 endfunction
 
-function! s:on_cursormove(min_count, total_count)
+function! s:show_tabline(min_count, total_count)
   if a:total_count >= a:min_count
     if &showtabline != 2
       set showtabline=2
@@ -112,7 +116,7 @@ function! airline#extensions#tabline#get()
     let s:current_tabcnt = curtabcnt
     let s:current_bufnr = -1  " force a refresh...
   endif
-  if s:show_buffers && curtabcnt == 1
+  if s:show_buffers && curtabcnt == 1 || !s:show_tabs
     return s:get_buffers()
   else
     return s:get_tabs()
@@ -126,7 +130,10 @@ function! airline#extensions#tabline#title(n)
 endfunction
 
 function! airline#extensions#tabline#get_buffer_name(nr)
-  return airline#extensions#tabline#{s:formatter}#format(a:nr, get(s:, 'current_buffer_list', s:get_buffer_list()))
+  let buffer_list = exists('s:current_buffer_list')
+        \ ? s:current_buffer_list
+        \ : s:get_buffer_list()
+  return airline#extensions#tabline#{s:formatter}#format(a:nr, buffer_list)
 endfunction
 
 function! s:get_buffer_list()
@@ -134,15 +141,19 @@ function! s:get_buffer_list()
   let cur = bufnr('%')
   for nr in range(1, bufnr('$'))
     if buflisted(nr) && bufexists(nr)
+      let toadd = 1
       for ex in s:excludes
-        if match(bufname(nr), ex)
-          continue
+        if match(bufname(nr), ex) >= 0
+          let toadd = 0
+          break
         endif
       endfor
       if getbufvar(nr, 'current_syntax') == 'qf'
-        continue
+        let toadd = 0
       endif
-      call add(buffers, nr)
+      if toadd
+        call add(buffers, nr)
+      endif
     endif
   endfor
 
