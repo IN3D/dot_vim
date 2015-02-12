@@ -23,8 +23,14 @@ let g:airline_right_alt_sep = ""
 let g:airline_left_sep = ""
 let g:airline_left_alt_sep = ""
 
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+" set a vertical column
+set cc=80
+
 if os == "Darwin"
-    set guifont=Monaco:h12
+    set guifont=Consolas:h12
     set background=dark
     colo gruvbox
     set listchars=tab:▸\ ,eol:¬
