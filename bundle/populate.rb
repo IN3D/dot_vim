@@ -36,6 +36,7 @@ bundles = [
     'https://github.com/plasticboy/vim-markdown.git',
     'https://github.com/tpope/vim-rails.git',
     'https://github.com/tpope/vim-repeat.git',
+    'https://github.com/vim-ruby/vim-ruby.git',
     'https://github.com/tpope/vim-speeddating.git',
     'https://github.com/tpope/vim-surround.git',
     'https://github.com/mattn/webapi-vim.git'
