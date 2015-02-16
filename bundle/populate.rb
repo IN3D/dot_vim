@@ -19,7 +19,7 @@ bundles = [
     'https://github.com/tpope/vim-bundler.git',
     'https://github.com/kchmck/vim-coffee-script.git',
     'https://github.com/tpope/vim-commentary.git',
-    'https://github.com/skammer/vim-css-color.git',
+    'https://github.com/ap/vim-css-color.git',
     'https://github.com/tpope/vim-cucumber.git',
     'https://github.com/tpope/vim-eunuch.git',
     'https://github.com/valeriangalliat/vim-dogescript.git',
