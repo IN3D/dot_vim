@@ -47,19 +47,27 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/webapi-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'dag/vim-fish'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'junegunn/goyo.vim'
+Plugin 'gkz/vim-ls'
+Plugin 'sjl/gundo.vim'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
 
 " My settings
+set shell=/bin/bash
+set relativenumber
 set number
-set ts=4 sts=4 sw=4 et
+set ts=2 sts=2 sw=2 et
 set listchars=tab:▸\ ,eol:¬
 set linebreak
 syntax on
 set background=dark
 colo gruvbox
-set guifont=Inconsolata:h14
+set guifont=Consolas:h12
 
 " airline
 set laststatus=2
@@ -83,3 +91,6 @@ let g:ctrlp_custom_ignore='node_modules\|bower_components\|DS_Store\|git'
 let g:UltiSnipsExpandTrigger="<c-E>"
 let g:UltiSnipsJumpForwardTrigger="<c-d>"
 let g:UltiSnipsJumpBackwardTrigger="<c-a>"
+
+" git gutter
+let g:gitgutter_max_signs=9001
