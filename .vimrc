@@ -58,16 +58,19 @@ call vundle#end()
 filetype plugin indent on
 
 " My settings
+syntax on
+colo gruvbox
 set shell=/bin/bash
-set relativenumber
-set number
+set rnu nu
 set ts=2 sts=2 sw=2 et
 set listchars=tab:▸\ ,eol:¬
 set linebreak
-syntax on
 set background=dark
-colo gruvbox
-set guifont=Consolas:h12
+set guifont=Anonymous\ Pro:h14
+
+" make absolutely, positively sure I have 'sane backspace'
+set backspace=2
+set backspace=indent,eol,start
 
 " airline
 set laststatus=2
