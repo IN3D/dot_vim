@@ -52,6 +52,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'junegunn/goyo.vim'
 Plugin 'gkz/vim-ls'
 Plugin 'sjl/gundo.vim'
+Plugin 'IN3D/vim-raml'
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
