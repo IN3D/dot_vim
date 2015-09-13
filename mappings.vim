@@ -7,7 +7,7 @@
 " --------------------
 
 " set leader key to space, Spacemacs has the right idea
-let mapleader=<space>
+let mapleader=' '
 
 " shorthand colon
 nnoremap ; :
