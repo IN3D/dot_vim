@@ -42,6 +42,36 @@ vnoremap <C-k> 15gkzz
 " Clear search
 noremap <silent><leader>/ :nohls<CR>
 
+" -----------
 " Toggles
+" -----------
+
+" --------
+" General
+" --------
 nnoremap <silent><leader>ts :set spell!<CR>
-nnoremap <silent><leader>tt :NERDTreeToggle<CR>
+nnoremap <silent><leader>tl :set list!<CR>
+
+" --------
+" Plugins
+" --------
+
+" Fugitive
+nnoremap <silent><leader>tgb :Gblame<CR>
+nnoremap <silent><leader>tgs :Gstatus<CR>
+nnoremap <silent><leader>tgd :Gdiff<CR>
+
+" Goyo
+nnoremap <silent><leader>tzen :Goyo<CR>
+
+" NERDTree
+nnoremap <silent><leader>tnt :NERDTreeToggle<CR>
+
+" Rainbow
+nnoremap <silent><leader>trb :RainbowToggle<CR>
+
+" Tagbar
+nnoremap <silent><leader>ttb :TagbarToggle<CR>
+
+" Undotree
+nnoremap <silent><leader>tut :UndotreeToggle<CR>
