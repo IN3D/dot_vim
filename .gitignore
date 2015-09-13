@@ -1,3 +1,4 @@
 # ignore swap files
 *.*.swp
 *.swp
+local.vim
