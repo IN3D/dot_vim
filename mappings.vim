@@ -9,10 +9,6 @@
 " set leader key to space, Spacemacs has the right idea
 let mapleader=' '
 
-" shorthand colon
-nnoremap ; :
-vnoremap ; :
-
 " select everything
 nnoremap vy ggVG
 

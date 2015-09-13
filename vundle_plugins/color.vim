@@ -75,7 +75,6 @@ if exists('g:vundle_installing_plugins')
   Plugin 'vim-scripts/saturn.vim'
   Plugin 'jeetsukumaran/vim-nefertiti'
   Plugin 'romainl/Disciple'
-  Plugin 'kossnocorp/perfect.vim'
   Plugin 'gregsexton/Gravity'
   Plugin 'uu59/vim-herokudoc-theme'
   Plugin 'adlawson/vim-sorcerer'

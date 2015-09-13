@@ -5,7 +5,7 @@ if exists('g:vundle_installing_plugins')
   Plugin 'chochos/ceylon-vim'
   Plugin 'claco/jasmine.vim'
   Plugin 'vim-scripts/nginx.vim'
-  Plugin 'scss-syntax.vim'
+  Plugin 'cakebaker/scss-syntax.vim'
   Plugin 'leafgarland/typescript-vim'
   Plugin 'burnettk/vim-angular'
   Plugin 'xsbeats/vim-blade'
@@ -25,5 +25,9 @@ if exists('g:vundle_installing_plugins')
   Plugin 'dag/vim-fish'
   Plugin 'gkz/vim-ls'
   Plugin 'IN3D/vim-raml'
+  Plugin 'othree/html5.vim'
+  Plugin 'othree/javascript-libraries-syntax.vim'
+  Plugin 'hail2u/vim-css3-syntax'
+  Plugin 'othree/yajs.vim'
   finish
 endif
