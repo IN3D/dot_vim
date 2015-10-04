@@ -2,3 +2,6 @@
 *.*.swp
 *.swp
 local.vim
+
+# ignore bundle directory
+bundle/
