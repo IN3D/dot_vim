@@ -1,5 +1,5 @@
 syntax on
-shell=/bash/bash
+set shell=/bin/bash
 set rnu nu
 set title
 set autoindent
