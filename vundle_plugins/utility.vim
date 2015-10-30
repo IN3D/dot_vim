@@ -17,7 +17,6 @@ if exists('g:vundle_installing_plugins')
   Plugin 'tpope/vim-eunuch'
   Plugin 'tpope/vim-fugitive'
   Plugin 'airblade/vim-gitgutter'
-  Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-speeddating'
   Plugin 'tpope/vim-surround'
@@ -35,7 +34,6 @@ if exists('g:vundle_installing_plugins')
   Plugin 'mattn/emmet-vim'
   Plugin 'vim-scripts/TaskList.vim'
   Plugin 'jiangmiao/auto-pairs'
-  Plugin 'luochen1990/rainbow'
   Plugin 'sgharms/GIFL'
   Plugin 'sk1418/Join'
   Plugin 'Valloric/MatchTagAlways'
@@ -43,5 +41,8 @@ if exists('g:vundle_installing_plugins')
   Plugin 'chrisbra/csv.vim'
   Plugin 'tyru/open-browser.vim'
   Plugin 'kballenegger/vim-autoreadwatch'
+  Plugin 'Yggdroot/indentLine'
+  Plugin 'roman/golden-ratio'
+  Plugin 'kien/rainbow_parentheses.vim'
   finish
 endif

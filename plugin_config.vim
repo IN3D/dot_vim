@@ -16,17 +16,23 @@ let g:gitgutter_max_signs=9001
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-" nerdtree
-noremap <silent><leader>nt :NERDTreeToggle<CR>
+" indent line
+let g:indentLine_enabled = 1
+let g:indentLine_leadingSpaceEnabled = 0
+let g:indentLine_char = '┆'
+let g:indentLine_leadingSpaceChar = '·'
 
 " syntastic
 let g:syntastic_ruby_checkers=['rubocop']
 let g:syntastic_enable_balloons = 1
 let g:syntastic_enable_signs=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='☠'
+let g:syntastic_warning_symbol='☣'
+let g:syntastic_style_error_symbol='✗'
+let g:syntastic_style_warning_symbol='⚠'
 
 " ultisnips
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsJumpForwardTrigger='<c-l>'
 let g:UltiSnipsJumpBackwardTrigger='<c-h>'
+let g:UltiSnipsEnableSnipMate = 0
